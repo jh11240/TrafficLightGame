@@ -22,7 +22,7 @@ interface rate{
 	double cal(int a, int b);
 }
 
-public class majimak {
+public class game {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -30,14 +30,14 @@ public class majimak {
         Scanner s = new Scanner(System.in);
         game_options g = new game_options();
         read_thebest r = new read_thebest();
-		System.out.println("½ÅÈ£µî °ÔÀÓÀÔ´Ï´Ù.");
+		System.out.println("ì‹ í˜¸ë“± ê²Œì„ì…ë‹ˆë‹¤.");
 		r.read();
-		System.out.println("Âü¿©ÀÚÀÇ ´Ğ³×ÀÓÀ» Á¤ÇØÁÖ¼¼¿ä: ");
+		System.out.println("ì°¸ì—¬ìì˜ ë‹‰ë„¤ì„ì„ ì •í•´ì£¼ì„¸ìš”: ");
 		r.setId(s.nextLine());		
 		
 		 while (true) {
 			 System.out.println("-------------------------------------------");
-			 System.out.print("¸Ş´º(°ÔÀÓ½ÃÀÛ:1, ³» µ·:2, ½Â·üº¸±â:3, ÃÖ°í ¼ºÀûº¸±â:4 ,°ÔÀÓÁ¾·á:5) >>");
+			 System.out.print("ë©”ë‰´(ê²Œì„ì‹œì‘:1, ë‚´ ëˆ:2, ìŠ¹ë¥ ë³´ê¸°:3, ìµœê³  ì„±ì ë³´ê¸°:4 ,ê²Œì„ì¢…ë£Œ:5) >>");
 			 int menu = s.nextInt();
 			 switch (menu) {
 			 case 1: g. main_game(); break;
@@ -45,15 +45,15 @@ public class majimak {
 			 case 3: g. winrate(); break;
 			 case 4:
 				 r.read();
-				 System.out.println("ÃÖ°í ¼ºÀûÀÇ À¯Àú´Â "+ r.getId()+" ÀÌ°í Á¡¼ö´Â "+r.getScore()+"ÀÔ´Ï´Ù."); break;
+				 System.out.println("ìµœê³  ì„±ì ì˜ ìœ ì €ëŠ” "+ r.getId()+" ì´ê³  ì ìˆ˜ëŠ” "+r.getScore()+"ì…ë‹ˆë‹¤."); break;
 			 case 5: g. finish(); return;
-			 default: System.out.println("Àß¸øÀÔ·ÂÇÏ¿´½À´Ï´Ù. ¼ıÀÚ(1~5)·Î ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			 default: System.out.println("ì˜ëª»ì…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤. ìˆ«ì(1~5)ë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			 }
 		 }
 	}
 }
 
-//·£´ıÀ¸·Î ¹èÁ¤µÈ 0~8ÀÇ ¼ıÀÚ¸¦ 3°¡Áö·Î ³ª´²ÁÖ´Â Å¬·¡½º
+//ëœë¤ìœ¼ë¡œ ë°°ì •ëœ 0~8ì˜ ìˆ«ìë¥¼ 3ê°€ì§€ë¡œ ë‚˜ëˆ ì£¼ëŠ” í´ë˜ìŠ¤
 class detectcolor  {
 	
 	public int detect(int a) {
@@ -63,146 +63,146 @@ class detectcolor  {
 	}
 }
 
-//°ÔÀÓ¿¡ ÇÊ¿äÇÑ ±â´ÉµéÀÌ ÀÖ´Â Å¬·¡½º
+//ê²Œì„ì— í•„ìš”í•œ ê¸°ëŠ¥ë“¤ì´ ìˆëŠ” í´ë˜ìŠ¤
 class game_options {
 	private int a;
 	private int mymoney=10;
 	
-	List<Integer> list = new LinkedList<>(); //Á¦³×¸¯ »ç¿ë
+	List<Integer> list = new LinkedList<>(); //ì œë„¤ë¦­ ì‚¬ìš©
     detectcolor d = new detectcolor();
     Random rand = new Random();
     Scanner s = new Scanner(System.in);
     Color_Define m = ()-> rand.nextInt(8);
     read_thebest re = new read_thebest();
 	
-    //°ÔÀÓ ÁøÇà ÇÔ¼ö
+    //ê²Œì„ ì§„í–‰ í•¨ìˆ˜
 	public void main_game(){
 
 		
 		while (true) {
-			a=d.detect(m.random()); //·£´ıÀ¸·Î 0~8À» ¹Ş¾Æ 3°¡Áö·Î ºĞ·ù 1ÀÏ¶© »¡°­ 2ÀÏ¶© ÁÖÈ² 3ÀÏ¶© ÃÊ·Ï
-			/*System.out.println("Á¤´äÀº"+a+"ÀÔ´Ï´Ù");*/ //È¤½Ã Å×½ºÆ® ÇÏ½Ç ¶§ ´ä ¹Ì¸® ¾Ë°í½ÍÀ¸½Ã¸é »ç¿ëÇÏ¼¼¿ä!
+			a=d.detect(m.random()); //ëœë¤ìœ¼ë¡œ 0~8ì„ ë°›ì•„ 3ê°€ì§€ë¡œ ë¶„ë¥˜ 1ì¼ë• ë¹¨ê°• 2ì¼ë• ì£¼í™© 3ì¼ë• ì´ˆë¡
+			/*System.out.println("ì •ë‹µì€"+a+"ì…ë‹ˆë‹¤");*/ //í˜¹ì‹œ í…ŒìŠ¤íŠ¸ í•˜ì‹¤ ë•Œ ë‹µ ë¯¸ë¦¬ ì•Œê³ ì‹¶ìœ¼ì‹œë©´ ì‚¬ìš©í•˜ì„¸ìš”!
 			 System.out.println("-------------------------------------------------");
-			 System.out.println("´ÙÀ½Áß ÇÏ³ªÀÇ º¸±â¸¦ °í¸£¼¼¿ä. 1¹ø : »¡°£»ö , 2¹ø : ÁÖÈ²»ö , 3¹ø : ÃÊ·Ï»ö  (¼ıÀÚ·Î ÀÔ·ÂÇÏ¼¼¿ä)");
+			 System.out.println("ë‹¤ìŒì¤‘ í•˜ë‚˜ì˜ ë³´ê¸°ë¥¼ ê³ ë¥´ì„¸ìš”. 1ë²ˆ : ë¹¨ê°„ìƒ‰ , 2ë²ˆ : ì£¼í™©ìƒ‰ , 3ë²ˆ : ì´ˆë¡ìƒ‰  (ìˆ«ìë¡œ ì…ë ¥í•˜ì„¸ìš”)");
 			 int menu = s.nextInt();
 			 switch (menu) {
 			
-			 case 1:  //³»°¡ »¡°£ »öÀ» °í¸¥°æ¿ì
+			 case 1:  //ë‚´ê°€ ë¹¨ê°„ ìƒ‰ì„ ê³ ë¥¸ê²½ìš°
 				 if(a==1) {
-				 System.out.println("ÃàÇÏµå¸³´Ï´Ù! ¸ÂÃß¼Ì½À´Ï´Ù! \n");
+				 System.out.println("ì¶•í•˜ë“œë¦½ë‹ˆë‹¤! ë§ì¶”ì…¨ìŠµë‹ˆë‹¤! \n");
 				 mymoney +=10;
 				 list.add(1);
 				  }
 			 else if(a==2){
-				 System.out.println("¾Æ½±½À´Ï´Ù ÁÖÈ²»öÀÌ¿´½À´Ï´Ù.. \n" );
+				 System.out.println("ì•„ì‰½ìŠµë‹ˆë‹¤ ì£¼í™©ìƒ‰ì´ì˜€ìŠµë‹ˆë‹¤.. \n" );
 				 mymoney -=10;
 				 if(mymoney<0) {
-					 System.out.println("ÀÌ·±~ µ·ÀÌ ´Ù ¶³¾îÁ³½À´Ï´Ù!  \n GAME OVER!");
+					 System.out.println("ì´ëŸ°~ ëˆì´ ë‹¤ ë–¨ì–´ì¡ŒìŠµë‹ˆë‹¤!  \n GAME OVER!");
 					 System.exit(1);}
 				 list.add(0);
 			 }
 			 else {
-				 System.out.println("¾Æ½±½À´Ï´Ù ÃÊ·Ï»öÀÌ¿´½À´Ï´Ù..\n");
+				 System.out.println("ì•„ì‰½ìŠµë‹ˆë‹¤ ì´ˆë¡ìƒ‰ì´ì˜€ìŠµë‹ˆë‹¤..\n");
 				 mymoney -=10;
 				 if(mymoney<0) {
-					 System.out.println("ÀÌ·±~  µ·ÀÌ ´Ù ¶³¾îÁ³½À´Ï´Ù! \n GAME OVER!");
+					 System.out.println("ì´ëŸ°~  ëˆì´ ë‹¤ ë–¨ì–´ì¡ŒìŠµë‹ˆë‹¤! \n GAME OVER!");
 					 System.exit(1);}
 				 list.add(0);
 			 }
 			 
 			if(read_thebest.getScore()<list.size()) {
 				
-				System.out.println("ÃàÇÏµå¸³´Ï´Ù!! ÃÖ°í ±â·ÏÀ» ¼¼¿ì¼Ì½À´Ï´Ù.");
+				System.out.println("ì¶•í•˜ë“œë¦½ë‹ˆë‹¤!! ìµœê³  ê¸°ë¡ì„ ì„¸ìš°ì…¨ìŠµë‹ˆë‹¤.");
 				write_thebest(re.getCurrent(),list.size());
-				System.out.println(re.getCurrent()+"´ÔÀÌ ÃÖ°í ¼ºÀûÀ¸·Î µî·ÏµÇ¾ú½À´Ï´Ù.");
-				System.out.println("(¸ŞÀÎ ¸Ş´ºÀÇ ÃÖ°í ¼ºÀû ¸Ş´º¿¡¼­ È®ÀÎÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.)\n");
+				System.out.println(re.getCurrent()+"ë‹˜ì´ ìµœê³  ì„±ì ìœ¼ë¡œ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
+				System.out.println("(ë©”ì¸ ë©”ë‰´ì˜ ìµœê³  ì„±ì  ë©”ë‰´ì—ì„œ í™•ì¸í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.)\n");
 			}
 			if(continue_or_not()==1) break;
 			 else return;
 			 
-			 case 2:  //³»°¡ ÁÖÈ²»öÀ» °í¸¥ °æ¿ì
+			 case 2:  //ë‚´ê°€ ì£¼í™©ìƒ‰ì„ ê³ ë¥¸ ê²½ìš°
 				 if(a==1) {
-				 System.out.println("¾Æ½±½À´Ï´Ù »¡°£»öÀÌ¿´½À´Ï´Ù.. \n");
+				 System.out.println("ì•„ì‰½ìŠµë‹ˆë‹¤ ë¹¨ê°„ìƒ‰ì´ì˜€ìŠµë‹ˆë‹¤.. \n");
 				 mymoney -=10;
 				 if(mymoney<0) {
-					 System.out.println("ÀÌ·±~ µ·ÀÌ ´Ù ¶³¾îÁ³½À´Ï´Ù! \n GAME OVER!");
+					 System.out.println("ì´ëŸ°~ ëˆì´ ë‹¤ ë–¨ì–´ì¡ŒìŠµë‹ˆë‹¤! \n GAME OVER!");
 					 System.exit(1);}
 				 list.add(0);
 			 }
 			 else if(a==2){
-				 System.out.println("ÃàÇÏµå¸³´Ï´Ù! ¸ÂÃß¼Ì½À´Ï´Ù! \n" );
+				 System.out.println("ì¶•í•˜ë“œë¦½ë‹ˆë‹¤! ë§ì¶”ì…¨ìŠµë‹ˆë‹¤! \n" );
 				 mymoney +=10;
 				 list.add(1);
 			 }
 			 else {
-				 System.out.println("¾Æ½±½À´Ï´Ù ÃÊ·Ï»öÀÌ¿´½À´Ï´Ù..\n");
+				 System.out.println("ì•„ì‰½ìŠµë‹ˆë‹¤ ì´ˆë¡ìƒ‰ì´ì˜€ìŠµë‹ˆë‹¤..\n");
 				 mymoney -=10;
 				 if(mymoney<0) {
-					 System.out.println("ÀÌ·±~ µ·ÀÌ ´Ù ¶³¾îÁ³½À´Ï´Ù! \n GAME OVER!");
+					 System.out.println("ì´ëŸ°~ ëˆì´ ë‹¤ ë–¨ì–´ì¡ŒìŠµë‹ˆë‹¤! \n GAME OVER!");
 					 System.exit(1);}
 				 list.add(0);
 			 }
 			 if(read_thebest.getScore()<list.size()) {
 					
-					System.out.println("ÃàÇÏµå¸³´Ï´Ù!! ÃÖ°í ±â·ÏÀ» ¼¼¿ì¼Ì½À´Ï´Ù.");
+					System.out.println("ì¶•í•˜ë“œë¦½ë‹ˆë‹¤!! ìµœê³  ê¸°ë¡ì„ ì„¸ìš°ì…¨ìŠµë‹ˆë‹¤.");
 					write_thebest(re.getCurrent(),list.size());
-					System.out.println(re.getCurrent()+"´ÔÀÌ ÃÖ°í ¼ºÀûÀ¸·Î µî·ÏµÇ¾ú½À´Ï´Ù.");
-					System.out.println("(¸ŞÀÎ ¸Ş´ºÀÇ ÃÖ°í ¼ºÀû ¸Ş´º¿¡¼­ È®ÀÎÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.)\n");
+					System.out.println(re.getCurrent()+"ë‹˜ì´ ìµœê³  ì„±ì ìœ¼ë¡œ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
+					System.out.println("(ë©”ì¸ ë©”ë‰´ì˜ ìµœê³  ì„±ì  ë©”ë‰´ì—ì„œ í™•ì¸í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.)\n");
 				}
 				if(continue_or_not()==1) break;
 				 else return;
 			 
-			 case 3: //³»°¡ ÃÊ·Ï»öÀ» °í¸¥ °æ¿ì
+			 case 3: //ë‚´ê°€ ì´ˆë¡ìƒ‰ì„ ê³ ë¥¸ ê²½ìš°
 				 if(a==1) {
-				 System.out.println("¾Æ½±½À´Ï´Ù »¡°£»öÀÌ¿´½À´Ï´Ù.. \n");
+				 System.out.println("ì•„ì‰½ìŠµë‹ˆë‹¤ ë¹¨ê°„ìƒ‰ì´ì˜€ìŠµë‹ˆë‹¤.. \n");
 				 mymoney -=10;
 				 if(mymoney<0) {
-					 System.out.println("ÀÌ·±~ µ·ÀÌ ´Ù ¶³¾îÁ³½À´Ï´Ù! \n GAME OVER!");
+					 System.out.println("ì´ëŸ°~ ëˆì´ ë‹¤ ë–¨ì–´ì¡ŒìŠµë‹ˆë‹¤! \n GAME OVER!");
 					 System.exit(1);}
 				 list.add(0);
 			 }
 			 else if(a==2){
-				 System.out.println("¾Æ½±½À´Ï´Ù ÁÖÈ²»öÀÌ¿´½À´Ï´Ù.. \n" );
+				 System.out.println("ì•„ì‰½ìŠµë‹ˆë‹¤ ì£¼í™©ìƒ‰ì´ì˜€ìŠµë‹ˆë‹¤.. \n" );
 				 mymoney -=10;
 				 if(mymoney<0) {
-					 System.out.println("ÀÌ·±~ µ·ÀÌ ´Ù ¶³¾îÁ³½À´Ï´Ù! \n GAME OVER!");
+					 System.out.println("ì´ëŸ°~ ëˆì´ ë‹¤ ë–¨ì–´ì¡ŒìŠµë‹ˆë‹¤! \n GAME OVER!");
 					 System.exit(1);}
 				 list.add(0);
 			 }
 			 else {
-				 System.out.println("ÃàÇÏµå¸³´Ï´Ù! ¸ÂÃß¼Ì½À´Ï´Ù!\n");
+				 System.out.println("ì¶•í•˜ë“œë¦½ë‹ˆë‹¤! ë§ì¶”ì…¨ìŠµë‹ˆë‹¤!\n");
 				 mymoney +=10;
 				 list.add(1);
 			 }
 			 
 			 if(read_thebest.getScore()<list.size()) {
 					
-					System.out.println("ÃàÇÏµå¸³´Ï´Ù!! ÃÖ°í ±â·ÏÀ» ¼¼¿ì¼Ì½À´Ï´Ù.");
+					System.out.println("ì¶•í•˜ë“œë¦½ë‹ˆë‹¤!! ìµœê³  ê¸°ë¡ì„ ì„¸ìš°ì…¨ìŠµë‹ˆë‹¤.");
 					write_thebest(re.getCurrent(),list.size());
-					System.out.println(re.getCurrent()+"´ÔÀÌ ÃÖ°í ¼ºÀûÀ¸·Î µî·ÏµÇ¾ú½À´Ï´Ù.");
-					System.out.println("(¸ŞÀÎ ¸Ş´ºÀÇ ÃÖ°í ¼ºÀû ¸Ş´º¿¡¼­ È®ÀÎÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.)\n");
+					System.out.println(re.getCurrent()+"ë‹˜ì´ ìµœê³  ì„±ì ìœ¼ë¡œ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
+					System.out.println("(ë©”ì¸ ë©”ë‰´ì˜ ìµœê³  ì„±ì  ë©”ë‰´ì—ì„œ í™•ì¸í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.)\n");
 				}
 				if(continue_or_not()==1) break;
 				 else return;
-			 default: System.out.println("Àß¸øÀÔ·ÂÇÏ¿´½À´Ï´Ù.");
+			 default: System.out.println("ì˜ëª»ì…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			 }
 		}
 	}
 	
-	//³» µ· ¾Ë·ÁÁÖ´Â ÇÔ¼ö
+	//ë‚´ ëˆ ì•Œë ¤ì£¼ëŠ” í•¨ìˆ˜
 	public void money() {
 	
-		System.out.println("Áö±İ ³ªÀÇ µ·Àº : " + mymoney);
-		if(mymoney==0) System.out.println("À§Çè! ÇÑ ÆÇ Áö¸é °ÔÀÓÁ¾·á~");
+		System.out.println("ì§€ê¸ˆ ë‚˜ì˜ ëˆì€ : " + mymoney);
+		if(mymoney==0) System.out.println("ìœ„í—˜! í•œ íŒ ì§€ë©´ ê²Œì„ì¢…ë£Œ~");
 		
 	}
 	
-	//½Â·ü ¾Ë·ÁÁÖ´Â ÇÔ¼ö
+	//ìŠ¹ë¥  ì•Œë ¤ì£¼ëŠ” í•¨ìˆ˜
 	public void winrate() {
 		int win = 0;
 		int lose =0;
 		rate r;
-		r = (int a, int b)-> a*100/(a+b); //¶÷´Ù ÇÔ¼ö¸¦ ÀÌ¿ëÇØ ÀÎÅÍÆäÀÌ½º Á¤ÀÇ
+		r = (int a, int b)-> a*100/(a+b); //ëŒë‹¤ í•¨ìˆ˜ë¥¼ ì´ìš©í•´ ì¸í„°í˜ì´ìŠ¤ ì •ì˜
 				
 		
 		for (Iterator<Integer> i= list.iterator();i.hasNext(); ) {
@@ -211,23 +211,23 @@ class game_options {
 		}
 		
 		
-		System.out.println("ÃÑ " + list.size()+"ÆÇ Áß"+ win+"ÆÇ ÀÌ±â°í "+lose+"ÆÇ Áö¼Ì½À´Ï´Ù.");
+		System.out.println("ì´ " + list.size()+"íŒ ì¤‘"+ win+"íŒ ì´ê¸°ê³  "+lose+"íŒ ì§€ì…¨ìŠµë‹ˆë‹¤.");
 		if(win+lose==0) {
-			System.out.println("¾ÆÁ÷ °ÔÀÓÀ» ÇÏ½ÃÁö ¾ÊÀ¸¼Ì½À´Ï´Ù. ½Â·üº¸±â´Â °ÔÀÓÀ» ÇÏ°í ´Ù½Ã ÀÌ¿ëÇØÁÖ¼¼¿ä.");
+			System.out.println("ì•„ì§ ê²Œì„ì„ í•˜ì‹œì§€ ì•Šìœ¼ì…¨ìŠµë‹ˆë‹¤. ìŠ¹ë¥ ë³´ê¸°ëŠ” ê²Œì„ì„ í•˜ê³  ë‹¤ì‹œ ì´ìš©í•´ì£¼ì„¸ìš”.");
 			return;}
-		else System.out.println("½Â·üÀº: "+r.cal(win,lose) +"ÆÛ¼¾Æ®");
+		else System.out.println("ìŠ¹ë¥ ì€: "+r.cal(win,lose) +"í¼ì„¼íŠ¸");
 		}
 	
-	//°ÔÀÓ Á¾·á ¹®±¸ ¶ç¿öÁÖ´Â ÇÔ¼ö
+	//ê²Œì„ ì¢…ë£Œ ë¬¸êµ¬ ë„ì›Œì£¼ëŠ” í•¨ìˆ˜
 	public void finish() {
-		System.out.println("°ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.");
+		System.out.println("ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 	}
 	
-	//°ÔÀÓÀ» °è¼Ó ÀÌ¾î³ª°¥ °ÍÀÎÁö Ã¼Å©ÇÏ´Â ÇÔ¼ö
+	//ê²Œì„ì„ ê³„ì† ì´ì–´ë‚˜ê°ˆ ê²ƒì¸ì§€ ì²´í¬í•˜ëŠ” í•¨ìˆ˜
 	 public int continue_or_not() {
 	    	int a=0;
 	    	while(true) {
-	    		System.out.println("°è¼ÓÇÏ½Ã°Ú½À´Ï±î? (¿¹:1, ¾Æ´Ï¿ä:2): ");
+	    		System.out.println("ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (ì˜ˆ:1, ì•„ë‹ˆìš”:2): ");
 				 
 				 int choice= s.nextInt();
 				 
@@ -240,14 +240,14 @@ class game_options {
 					 break;
 				 }
 				 else {
-					 System.out.println("¼ıÀÚ 1 ¶Ç´Â 2·Î ÀÔ·ÂÇØÁÖ¼¼¿ä");
+					 System.out.println("ìˆ«ì 1 ë˜ëŠ” 2ë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 				 }
 	    		
 	    	}
 	    	return a;
 	    }
 
-	 //ÃÖ°í ¼ºÀûÀ» ³»°Ô µÈ´Ù¸é ÆÄÀÏ¿¡ ÀÔ·ÂÇØÁÖ´Â ÇÔ¼ö
+	 //ìµœê³  ì„±ì ì„ ë‚´ê²Œ ëœë‹¤ë©´ íŒŒì¼ì— ì…ë ¥í•´ì£¼ëŠ” í•¨ìˆ˜
 	 public void write_thebest(String b, int c) {
 		 FileWriter a;
 			try {
@@ -274,7 +274,7 @@ class game_options {
 	private static String s;
 	private static String currentid;
 	
-	//ÆÄÀÏ¿¡ ÀÖ´Â °ÍÀ» ºÒ·¯¿Í a¿Í s¿¡ ÀúÀåÇØÁÜ
+	//íŒŒì¼ì— ìˆëŠ” ê²ƒì„ ë¶ˆëŸ¬ì™€ aì™€ sì— ì €ì¥í•´ì¤Œ
 	public void read() {
 	 try(BufferedReader br = new BufferedReader(new FileReader("best.txt"))){
 		
@@ -292,24 +292,24 @@ class game_options {
 		}
 	}
 	
-	//ÃÖ°í ¼ºÀûÀ» ³½ À¯ÀúÀÇ ´Ğ³×ÀÓÀ» ºÒ·¯¿À´Â ÇÔ¼ö
+	//ìµœê³  ì„±ì ì„ ë‚¸ ìœ ì €ì˜ ë‹‰ë„¤ì„ì„ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
 	public String getId() {
 		return s;
 	}
 	
-	//ÃÖ°í ¼ºÀû ³½ À¯ÀúÀÇ Á¡¼ö ºÒ·¯¿À´Â ÇÔ¼ö
+	//ìµœê³  ì„±ì  ë‚¸ ìœ ì €ì˜ ì ìˆ˜ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
 	public static int getScore() {
 		return a;
 	}
 	
-	//Âü¿©ÀÚÀÇ ´Ğ³×ÀÓ ÀúÀå ÇØÁÖ´Â ÇÔ¼ö
+	//ì°¸ì—¬ìì˜ ë‹‰ë„¤ì„ ì €ì¥ í•´ì£¼ëŠ” í•¨ìˆ˜
 	public void setId(String c) {
 		currentid =c;
 	}
 	
-	//ÇöÀç Âü¿©ÀÚÀÇ ´Ğ³×ÀÓ ºÒ·¯¿À´Â ÇÔ¼ö
+	//í˜„ì¬ ì°¸ì—¬ìì˜ ë‹‰ë„¤ì„ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
 	public String getCurrent() {
-		s = currentid; //currentid°¡ ºÒ·ÈÀ» ¶© ¾îÂ÷ÇÇ ÃÖ°í ±â·Ï ¼¼¿üÀ» ¶§ÀÌ¹Ç·Î s¿¡ ³Ö¾îÁÜ
+		s = currentid; //currentidê°€ ë¶ˆë ¸ì„ ë• ì–´ì°¨í”¼ ìµœê³  ê¸°ë¡ ì„¸ì› ì„ ë•Œì´ë¯€ë¡œ sì— ë„£ì–´ì¤Œ
 		return s;
 		
 	}
