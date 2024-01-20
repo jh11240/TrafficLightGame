@@ -1,5 +1,9 @@
 # TrafficLightGame
 Java 를 이용해 만든 간단한 게임입니다.
+![image](https://github.com/jh11240/TrafficLightGame/assets/73728655/dda1f92b-72e7-4ea7-a7e7-637747862a0d)
+![image](https://github.com/jh11240/TrafficLightGame/assets/73728655/bff72bbd-4a5a-4e9f-8c25-b45211da83fe)
+![image](https://github.com/jh11240/TrafficLightGame/assets/73728655/6c027aa4-ec76-4fac-938f-a1919c4ec3c6)
+
 
 ## 실행환경: 
 os는 wIndow이고 eclipse를 이용했습니다.
